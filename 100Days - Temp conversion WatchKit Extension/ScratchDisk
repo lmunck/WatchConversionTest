@@ -1,0 +1,64 @@
+---- HEADER ---
+
+
+// Setting input variables for the Crown input
+@State private var inputTemperature: Double = 273.15
+@State private var inputDistanceLong: Double = 0
+
+// Temperature output variables
+var outputKelvin: Double {
+    inputTemperature
+}
+var outputCelcius: Double {
+    inputTemperature - 273
+}
+var outputFahrenheit: Double {
+    outputCelcius * 9/5 + 32
+}
+
+// Crown maximum
+let maxCrownValue: Double = 999
+
+// Distance LONG output variables
+var outputLightYears: Double {
+    inputDistanceLong * 0.0158125
+}
+var outputParsec: Double {
+    inputDistanceLong * 0.00484814
+}
+var output1000AU: Double {
+    inputDistanceLong
+}
+var outputKM: Double {
+    inputDistanceLong * 149600000
+}
+
+---- BODY -----
+
+
+// Temperature
+Section(header: Text("Temperature")) {
+    VStack {
+        outputNormal(outputNumber: outputCelcius, outputType: "Celcius", outputDecimals: 0, outputColor: Color.green)
+        outputNormal(outputNumber: outputKelvin, outputType: "Kelvin", outputDecimals: 0, outputColor: Color.blue)
+        outputNormal(outputNumber: outputFahrenheit, outputType: "Fahrenheit", outputDecimals: 0, outputColor: Color.orange)
+    }
+    .background(Color.white.opacity(0.05))
+}
+.focusable(true)
+.digitalCrownRotation($inputTemperature, from: 0.0, through: maxCrownValue, by: 1.0, sensitivity: .low)
+Spacer()
+
+// DistanceLong
+Section(header: Text("Distance (Space)")) {
+    VStack {
+        outputNormal(outputNumber: outputLightYears, outputType: "Light years", outputDecimals: 1, outputColor: Color.white)
+        outputNormal(outputNumber: outputParsec, outputType: "Parsec", outputDecimals: 1, outputColor: Color.white)
+        outputNormal(outputNumber: output1000AU, outputType: "1000 AU", outputDecimals: 0, outputColor: Color.white)
+        outputSmall(outputNumber: outputKM, outputType: "million KM", outputDecimals: 0, outputColor: Color.gray)
+    }
+    //.background(RoundedRectangle(cornerRadius: 5.0))
+    .background(Color.white.opacity(0.05))
+}
+.focusable(true)
+.digitalCrownRotation($inputDistanceLong, from: 0.0, through: maxCrownValue, by: 1.0, sensitivity: .high)
