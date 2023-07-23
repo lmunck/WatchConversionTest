@@ -31,5 +31,7 @@ The choice of font and font size with which Lorem ipsum is reproduced answers to
 # Characters
 ## John findings
 Some text about John
+Backlinks: [Mildly](#Mildly), [Manners](#Manners)
 ## Jane Smith
 Some text about Jane
+## Manners
