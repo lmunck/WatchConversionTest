@@ -10,7 +10,7 @@ With some text
 ## a new headline
 And now a [link](#my-sub-headline) to the old headline
 # Tags
-## Mildly
+## $\textcolor{red}{\textsf{Mildly}}$
 Some text in which I suddenly mention [John Findings](#John-findings)
 
 ## Crazy
