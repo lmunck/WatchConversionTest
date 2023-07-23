@@ -33,7 +33,7 @@ The choice of font and font size with which Lorem ipsum is reproduced answers to
 ## John findings
 Some text about John
 
-Linked by: [Mildly](#Mildly), [Manners](#Manners)
+Used in: [Mildly](#Mildly), [Manners](#Manners-1)
 ## Jane Smith
 Some text about Jane
 ## Manners
