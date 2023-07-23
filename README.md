@@ -7,4 +7,4 @@ Test of **bold** and *italic*
 With some text
 
 ## a new headline
-And now a [link]([url](#my-sub-headline) to the old headline
+And now a [link](#my-sub-headline) to the old headline
